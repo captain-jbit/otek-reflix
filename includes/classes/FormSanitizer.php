@@ -4,7 +4,7 @@
 class FormSanitizer{
 
     #make the first letter appear capital
-    public static function sanitizeFormString($inputText){
+      public static function sanitizeFormString($inputText){
         $inputText = strip_tags($inputText);#remove html tags
         $inputText = str_replace(" ", "", $inputText);#remove any spaces
         $inputText = strtolower($inputText);#to lower case
@@ -13,15 +13,14 @@ class FormSanitizer{
     }
 
       
-     public static function sanitizeFormUsername($inputText){
+        public static function sanitizeFormUsername($inputText){
             $inputText = strip_tags($inputText);#remove html tags
             $inputText = str_replace(" ", "", $inputText);#remove any spaces
             return $inputText;
         }
 
-    public static function sanitizeFormPassword($inputText){
+        public static function sanitizeFormPassword($inputText){
             $inputText = strip_tags($inputText);#remove html tags
-
             return $inputText;
         }
 
