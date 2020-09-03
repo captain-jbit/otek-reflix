@@ -14,7 +14,7 @@ public function __construct($con,$userName){
 
 #main video cover player
 public function createPreviewVideo($entity){
-    if($entity ==null){
+    if($entity == null){
         $entity = $this->getRandomEntity();
     }
 
@@ -27,11 +27,23 @@ public function createPreviewVideo($entity){
     
     <img src='$thumbnail' class='previewImage' hidden>
 
-    <video autoplay muted class='previewVideo'>
+    <video autoplay muted class='previewVideo' onended='previewEnded()'>
     
     <source src='$preview' type='video/mp4'>
-    <video/>
     
+    </video>
+
+    <div class='previewOverlay'>
+    
+    <div class='mainDetails'>
+    <h3>$name</h3>
+    <div class='buttons'>
+    <button><i class='fas fa-play'></i> Play</button>
+    <button onClick='volumeToggle(this)'><i class='fas fa-volume-mute'></i></button>
+    </div> 
+
+    </div>
+    </div>
     </div>";
 
 
