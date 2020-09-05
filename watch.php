@@ -9,7 +9,15 @@ if(!isset($_SESSION["userLoggedIn"])){
 }
 
 $video = new Video($con,$_GET["id"]);
-
 $videos->incrementViews();
 
 ?>
+
+<div class="watchContainer">
+
+
+<video conttrols autoplay>
+    <source src='<?php echo $video->getFilePath();?>' type="video/mp4"/>
+</video>
+</div>
+
