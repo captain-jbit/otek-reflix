@@ -11,7 +11,7 @@ class Video{
             $this->sqlData = $input;
         }
         else {
-            $query = $this->con->prepare("SELECT * FROM entities WHERE id=:id");
+            $query = $this->con->prepare("SELECT * FROM videos WHERE id=:id");
             $query->bindValue(":id", $input);
             $query->execute();
 
@@ -38,6 +38,13 @@ class Video{
     }
     public function getEpisodeNumber(){
         return $this->sqlData["episode"];
+    }
+    public function getSeasonNumber(){
+        return $this->sqlData["season"];
+    }
+
+    public function getEntityId(){
+        return $this->sqlData["entityId"];
     }
 
     public function incrementViews(){
