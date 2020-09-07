@@ -3,6 +3,7 @@ body {
     height: 100%;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 * {
@@ -11,14 +12,13 @@ body {
     box-sizing: border-box;
 }
 
-.wrapper{
+.wrapper {
     min-width: 1050px;
     min-height: 100%;
     background-color: #141414;
-
 }
 
-.sign_in_container {
+.signInContainer {
     background-color: #efefee;
     height: 100vh;
     display: flex;
@@ -31,7 +31,7 @@ body {
     min-height: 300px;
     max-height: 100%;
     width: 450px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+    box-shadow: rgba(0,0,0, 0.1) 0 1px 2px;
     padding: 20px 35px;
     overflow-y: auto;
 }
@@ -64,7 +64,7 @@ body {
     font-size: 16px;
 }
 
-.header {
+.column .header {
     padding: 20px 0;
 }
 
@@ -82,75 +82,215 @@ body {
 }
 
 .column .header img {
-    width: 200px;
+    width: 100px;
 }
 
-.sign_in_message {
+.signInMessage {
     font-size: 14px;
     font-weight: 400;
-    text-decoration-line: none;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 .errorMessage {
-    color: red;
+    color: #f00;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     text-align: center;
 }
 
 .previewImage,
-.previewVideo{
-width: 100%;
+.previewVideo {
+    width: 100%;
 }
 
-.previewContainer{
-position: relative;
-display: flex;
+.previewContainer {
+    position: relative;
+    display: flex;
 }
 
-.previewOverlay{
+.previewOverlay {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
     position: absolute;
-    
 }
 
-.previewOverlay .mainDetails h3{
-    color: white;
+.previewOverlay .mainDetails h3 {
+    color: #fff;
     font-size: 40px;
-    margin:15px 0;
+    margin: 15px 0;
 }
 
-.previewOverlay .mainDetails{
+.previewOverlay .mainDetails {
     position: relative;
-    top:35%;
+    top: 35%;
     margin-left: 50px;
     display: flex;
     flex-direction: column;
 }
 
-.mainDetails button{
+h3{
+    color:#e5e5e5;
+   
+}
+
+h3:hover{
+    color:#fff;
+  
+}
+
+a{
+    text-decoration: none;
+}
+
+.mainDetails button {
     background-color: rgba(51,51,51,0.4);
-    color:white;
-    border:none;
-    min-width:150px;
-    padding:0 38px;
-    height:50px;
+    color: #fff;
+    border: none;
+    min-width: 150px;
+    padding: 0 38px;
+    height: 50px;
     max-height: 50px;
-    font-size:18px;
-    border-radius: 15px;
+    font-size: 18px;
+    border-radius: 2px;
     margin-bottom: 15px;
     margin-right: 5px;
     cursor: pointer;
 }
 
-button i{
+button i {
     color: inherit;
 }
 
-.mainDetails button:hover{
+.mainDetails button:hover {
     background-color: #e6e6e6;
-    color:#000;
+    color: #000;
+}
+
+.priviewContainer{
+    width:230px;
+    height:129px;
+    margin-right:4px;
+    display: block;
+    direction: row;
+}
+
+.imageContainer1{
+    width: 230px;
+    height: 129px;
+    margin-right: 4px;
+    display: inline-flex;
+}
+
+.imageContainer1 img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.entities{
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.previewCategories{
+
+    padding: 0 50px;
+}
+
+.errorBanner{
+   color:#fff;
+   position: absolute;
+   top:25%;
+   width:100%;
+   text-align:center;
+   font-size:18px; 
+}
+
+.season{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+
+}
+
+.episodeContainer{
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 4px;
+
+}
+
+.episodeContainer .contents{
+    display:flex;
+    flex-direction: column;
+    width: 230px;
+
+}
+
+.episodeContainer img{
+    width:230px;
+    height:129px;
+    object-fit:cover;
+}
+
+.episodeContainer .videoInfo h5,
+.episodeContainer .videoInfo span{
+    color:white;
+    width:100;
+    white-space: normal;
+}
+
+.episodeContainer .videoInfo{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.previewCategories .noScroll .category .entities{
+    white-space:normal;
+}
+
+.watchContainer{
+    width:100%
+}
+
+.videoControls {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+
+}
+
+.videoControls button{
+font-size: 50px;
+padding:50px;
+color:white;
+background-color: transparent;
+border: none;
+}
+
+.upNext{
+    height: 100%;
+    justify-content: center;
+}
+
+.upNextContainer button{
+    padding:0;
+}
+.upNextContainer h2 ,.upNextContainer h3 {
+    color: white;
+}
+
+.watchNav{
+    z-index: 2;
 }
