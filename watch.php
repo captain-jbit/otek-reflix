@@ -11,7 +11,7 @@ if(!isset($_SESSION["userLoggedIn"])){
 $video = new Video($con,$_GET["id"]);
 $video->incrementViews();
 
-
+$upNextVideo = VideoProvider::getUpNext($con,$video);
 ?>
 
 <div class="watchContainer">
@@ -22,7 +22,13 @@ $video->incrementViews();
 </div>
 
 <div class="videoControls upNext">
-<button><i class="fas fa-redo"></button>
+<button onclick="restartVideo();"><i class="fas fa-redo"></i></button>
+2
+<div class ="upNextContainer"> 
+    <h2>Up next:</h2>
+    <h3><?php echo $upNextVideo->getTitle();?></h3>
+    <h3><?php echo $upNextVideo->getSeasonNumber();?></h3>
+    <button class="playNext"><i class="fas fa-arrow-left"></i></button>
 </div>
 
 <video conttrols autoplay>
